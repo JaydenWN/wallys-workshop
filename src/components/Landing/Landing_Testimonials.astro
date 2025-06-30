@@ -1,0 +1,167 @@
+---
+import LandingTestimonialsCard from "./Landing_Testimonials_Card.astro";
+import nextIcon from "@icons/next.svg";
+import prevIcon from "@icons/prev.svg";
+import { Image } from "astro:assets";
+---
+
+<section>
+    <div class="container">
+        <div class="header">
+            <h2>What Locals Are Saying</h2>
+            <p>
+                We’ve helped drivers, riders and farmers across the region keep
+                their vehicles running strong. Here’s what some of our happy
+                customers have shared about their experience with Wally’s
+                Workshop. Reliable service and real results every time
+            </p>
+        </div>
+        <div class="embla">
+            <div class="embla__viewport">
+                <div class="embla__container">
+                    <div class="embla__slide">
+                        <LandingTestimonialsCard
+                            quote="5 Stars! (6 if I could). Wally got me out of a proper pickle being broken down and came the very next day from me texting him to him being able to fit me to diagnose the problem and then had the part ordered and fitted plus a carbon intake clean (which I highly recommend as the car is as healthy as ever now) in less then 2 days. Very very happy with the price, professionalism and work being done to my car and highly recommend him to anyone with car troubles. I do appreciate it massively again Wally."
+                            quotee="Charlie Gower"
+                            title="Very, Very, Happy"
+                        />
+                    </div>
+                    <div class="embla__slide">
+                        <LandingTestimonialsCard
+                            quote="I needed some urgent repairs for rego. Wally works quickly, is efficient, thorough and a pleasure to deal with. I highly recommend his service."
+                            quotee="Darcy Drayton"
+                            title="Highly Recommend"
+                        />
+                    </div>
+
+                    <div class="embla__slide">
+                        <LandingTestimonialsCard
+                            quote="excellent service...very professional...precise and fast at what he does...highly recommend...thanks Wally!"
+                            quotee="Tamara Stewart"
+                            title="Professional Mobile Mechanic"
+                        />
+                    </div>
+                </div>
+            </div>
+            <div class="embla__buttons">
+                <button class="embla__button embla__button--prev" id="prevBtn">
+                    <Image src={prevIcon} alt="previous slide" /></button
+                >
+                <button class="embla__button embla__button--next" id="nextBtn"
+                    ><Image src={nextIcon} alt="next slide" /></button
+                >
+            </div>
+        </div>
+    </div>
+</section>
+
+<style>
+    h2 {
+        font-size: 1.65em;
+        color: var(--text-purple);
+    }
+    .container {
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+    }
+    .header {
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+    }
+
+    .embla {
+        position: relative;
+        width: 100%;
+        overflow: hidden;
+    }
+
+    .embla__viewport {
+        overflow: hidden;
+        width: 100%;
+    }
+
+    .embla__container {
+        display: flex;
+    }
+
+    .embla__slide {
+        position: relative;
+        flex: 0 0 100%;
+        min-width: 0;
+        padding: 1rem;
+    }
+
+    .embla__buttons {
+        display: flex;
+        justify-content: center;
+        gap: 1rem;
+        margin-top: 1rem;
+    }
+
+    .embla__button {
+        background-color: var(--red);
+        color: white;
+        border: none;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 0.5rem 1rem;
+        border-radius: 4rem;
+        cursor: pointer;
+        width: 35px;
+        height: 35px;
+    }
+
+    .embla__button:hover {
+    }
+
+    @media (min-width: 768px) {
+        .container {
+            gap: 4rem;
+        }
+        .header {
+            text-align: center;
+        }
+        .header p {
+            width: 60%;
+            margin: 0px auto;
+        }
+    }
+
+    @media (min-width: 1024px) {
+        .container {
+            display: grid;
+            grid-template-columns: 0.7fr 1fr;
+            grid-template-areas: "header embla";
+            gap: 2rem;
+        }
+        .header {
+            grid-area: header;
+            text-align: left;
+        }
+        .header p {
+            width: 100%;
+        }
+        .embla {
+            grid-area: embla;
+        }
+        .embla__slide {
+            padding-top: 0px;
+        }
+    }
+</style>
+
+<script>
+    import emblaCarousel from "embla-carousel";
+
+    const viewport = document.querySelector(".embla__viewport");
+    const prevBtn = document.getElementById("prevBtn");
+    const nextBtn = document.getElementById("nextBtn");
+
+    const embla = emblaCarousel(viewport, { loop: true });
+
+    prevBtn.addEventListener("click", () => embla.scrollPrev());
+    nextBtn.addEventListener("click", () => embla.scrollNext());
+</script>

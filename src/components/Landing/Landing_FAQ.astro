@@ -1,0 +1,73 @@
+---
+import { Image } from "astro:assets";
+import FAQ from "../common/FAQ.astro";
+import qaImage from "@images/mobile-mechanic-qa.jpg";
+const qaObject = [
+    {
+        q: "What areas do you service?",
+        a: "We service Glen Innes, Deepwater, Tenterfield, Inverell and nearby towns. If you're unsure whether we come to your area, just give us a call and we’ll let you know",
+    },
+    {
+        q: "Do you work on weekends?",
+        a: "Yes, we’re available on weekends by appointment. If you need urgent help or can't book during the week, reach out and we’ll do our best to fit you in.",
+    },
+    {
+        q: "What types of vehicles do you work on?",
+        a: "We work on all kinds of vehicles including cars, bikes, trailers, farm equipment and more. Whether it's regular servicing or breakdown repairs, we’ve got you covered.",
+    },
+    {
+        q: "What if my car breaks down at home?",
+        a: "If your car breaks down at home or on the road, just give us a call. We’re fully mobile and can come to you to get you back up and running.",
+    },
+];
+---
+
+<section>
+    <div class="container">
+        <h2>Frequently Asked Questions</h2>
+        <FAQ qaObject={qaObject} class="faq" />
+        <Image src={qaImage} alt="" class="image" />
+    </div>
+</section>
+
+<style>
+    section {
+        background-color: var(--bg-purple);
+    }
+    h2 {
+        font-size: 1.65em;
+        color: var(--text-purple);
+    }
+    .container {
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+    }
+    .image {
+        width: 100%;
+        height: auto;
+        border-radius: 16px;
+    }
+
+    @media (min-width: 768px) {
+        .container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-template-areas:
+                "title title"
+                "image faq";
+            gap: 2rem;
+        }
+        .image {
+            grid-area: image;
+        }
+        .faq {
+            grid-area: faq;
+        }
+        h2 {
+            grid-area: title;
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+    }
+</style>

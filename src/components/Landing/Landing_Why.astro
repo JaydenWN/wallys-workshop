@@ -1,0 +1,161 @@
+---
+import SecondaryButtonDark from "../common/Secondary_Button_Dark.astro";
+import PrimaryButton from "../common/Primary_Button.astro";
+import { Image } from "astro:assets";
+import checkIcon from "@icons/check-purple.svg";
+import calanderIcon from "@icons/calandar-icon.svg";
+import phoneIcon from "@icons/call-purple.svg";
+---
+
+<section>
+    <div class="container">
+        <div class="why-header">
+            <h2>Why Choose Wally’s Workshop As your mobile Mechanic?</h2>
+            <p>
+                Choosing Wally’s Workshop means you get a mechanic who’s local,
+                friendly and genuinely cares about keeping your vehicle in top
+                shape. We take the stress out of servicing and repairs by coming
+                to you, so you can get on with your day.
+            </p>
+            <div class="cta-buttons">
+                <SecondaryButtonDark
+                    link="tel:"
+                    text="Call Us"
+                    icon={phoneIcon}
+                />
+                <PrimaryButton
+                    link="/contact"
+                    text="Book A Service"
+                    icon={calanderIcon}
+                />
+            </div>
+        </div>
+
+        <div class="reasons">
+            <div class="reason">
+                <Image src={checkIcon} alt="" class="image" />
+                <h3>We Come to You</h3>
+                <p>
+                    No need to tow your car or wait around at a workshop. We
+                    bring the tools, parts and know-how straight to your
+                    driveway, paddock or roadside.
+                </p>
+            </div>
+
+            <div class="reason">
+                <Image src={checkIcon} alt="" class="image" />
+                <h3>Local Know-How</h3>
+                <p>
+                    We understand the roads, the weather and the kind of gear
+                    locals rely on. That means faster service and repairs that
+                    are actually suited to your setup.
+                </p>
+            </div>
+
+            <div class="reason">
+                <Image src={checkIcon} alt="" class="image" />
+                <h3>No Nonsense Service</h3>
+                <p>
+                    We believe in clear communication, fair pricing and quality
+                    work. You’ll always know what’s being done and why, with no
+                    confusing jargon.
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<style>
+    section {
+        background-color: var(--bg-purple);
+    }
+    .container {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+    }
+    h2 {
+        font-size: 1.65em;
+        color: var(--text-purple);
+    }
+    h3 {
+        font-size: 1.3em;
+        color: var(--text-purple);
+    }
+    .why-header {
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+    }
+    .cta-buttons {
+        display: flex;
+        gap: 1rem;
+    }
+
+    .reasons {
+        display: flex;
+        flex-direction: column;
+        gap: 4rem;
+        margin-top: 4rem;
+    }
+    .reason {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        padding: 1rem;
+        border-radius: 16px;
+        border: 1px solid white;
+        box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    }
+    .image {
+        width: 65px;
+        height: 65px;
+        object-fit: cover;
+    }
+
+    @media (min-width: 768px) {
+        .reason {
+            width: calc(50% - 2rem);
+            box-sizing: border-box;
+        }
+        h3 {
+            text-align: center;
+            margin-bottom: 1rem;
+        }
+        .image {
+            align-self: center;
+        }
+        .reasons {
+            flex-direction: row;
+            flex-wrap: wrap;
+            gap: 4rem;
+        }
+    }
+
+    @media (min-width: 1024px) {
+        .why-header {
+            grid-area: why-header;
+        }
+        .reasons {
+            grid-area: reasons;
+            gap: 4rem;
+        }
+    }
+
+    @media (min-width: 1440px) {
+        .container {
+            display: grid;
+            grid-template-columns: 0.65fr 1fr;
+            grid-template-areas: "why-header reasons";
+            gap: 3rem;
+        }
+        .why-header {
+            grid-area: why-header;
+        }
+        .reasons {
+            grid-area: reasons;
+            gap: 4rem;
+            margin-top: 0px;
+        }
+    }
+</style>

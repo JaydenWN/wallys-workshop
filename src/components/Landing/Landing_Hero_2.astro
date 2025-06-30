@@ -1,0 +1,107 @@
+---
+import { Image } from "astro:assets";
+import SecondaryButton from "../common/Secondary_Button.astro";
+import PrimaryButton from "../common/Primary_Button.astro";
+import calandarIcon from "@icons/calandar-icon.svg";
+import phoneIcon from "@icons/phone.svg";
+import heroImage from "@images/wallys-workshop-mobile-mechanic.jpg";
+---
+
+<header>
+    <div class="container">
+        <h1>Reliable Mobile Mechanic Serving Glen Innes and Beyond</h1>
+        <Image src={heroImage} alt="" class="hero-image" />
+        <p>
+            From logbook services to emergency breakdowns, Wally’s Workshop
+            keeps your car, bike, trailer or farm gear running smoothly right at
+            your doorstep.
+        </p>
+        <div class="cta-buttons">
+            <SecondaryButton link="tel:" text="Call Us" icon={phoneIcon} />
+            <PrimaryButton
+                link="/contact"
+                text="Book A Service"
+                icon={calandarIcon}
+            />
+        </div>
+    </div>
+</header>
+
+<style>
+    header {
+        background-color: var(--purple);
+        color: white;
+    }
+    .hero-image {
+        width: 100%;
+        height: auto;
+        border-radius: 16px;
+    }
+    .container {
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+    }
+    h1 {
+        font-size: 2.25em;
+    }
+
+    .cta-buttons {
+        display: flex;
+        gap: 1rem;
+    }
+
+    @media (min-width: 768px) {
+        .container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-template-areas:
+                "heading heading"
+                "text-content image"
+                "buttons image";
+        }
+        h1 {
+            grid-area: heading;
+            font-size: 3em;
+        }
+        p {
+            grid-area: text-content;
+        }
+        .cta-buttons {
+            grid-area: buttons;
+            margin-top: auto;
+            flex-direction: column;
+        }
+        .hero-image {
+            grid-area: image;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+
+    @media (min-width: 1024px) {
+        .container {
+            grid-template-areas:
+                "image heading"
+                "image text-content"
+                "image buttons";
+            padding: 0px;
+        }
+        h1 {
+            padding-top: 4rem;
+        }
+        .cta-buttons {
+            padding-bottom: 2rem;
+        }
+        .hero-image {
+            border-radius: 0px;
+        }
+    }
+
+    @media (min-width: 1440px) {
+        .container {
+            gap: 4rem;
+        }
+    }
+</style>

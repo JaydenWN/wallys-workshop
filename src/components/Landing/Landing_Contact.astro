@@ -1,0 +1,109 @@
+---
+import ContactForm from "../common/Contact_Form.astro";
+---
+
+<section>
+    <div class="container">
+        <div class="contact-head">
+            <h2>Get in Touch with Wally’s Workshop</h2>
+            <p>
+                Whether you need a quote, want to book a service or just have a
+                question, we’re here to help
+            </p>
+        </div>
+        <div class="form">
+            <ContactForm />
+        </div>
+
+        <div class="contact-information">
+            <div class="info-header">
+                <h3>Prefer to Chat?</h3>
+                <p>
+                    Give us a call or flick through an email and we’ll get back
+                    to you as soon as we can.
+                </p>
+            </div>
+
+            <div class="info">
+                <h4>Contact Us By Phone</h4>
+                <a href="tel:">0426 977 997</a>
+            </div>
+
+            <div class="info">
+                <h4>Send Us an Email</h4>
+                <a href="mailto:">Wally@wallysworkshop.com</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<style>
+    section {
+        background-color: var(--bg-purple);
+    }
+    h2 {
+        font-size: 1.65em;
+        margin-bottom: 2rem;
+        color: var(--text-purple);
+    }
+    .container {
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+    }
+    .contact-information {
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+        margin-top: 2rem;
+    }
+    .info-header {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+    }
+    h3 {
+        font-size: 1.35em;
+    }
+    h4 {
+        margin-bottom: 1rem;
+    }
+    h2,
+    h3,
+    h4 {
+        color: var(--text-purple);
+    }
+    a {
+        text-decoration: none;
+        color: black;
+    }
+
+    @media (min-width: 768px) {
+        .contact-head {
+            grid-area: contact-head;
+        }
+        .form {
+            grid-area: form;
+        }
+        .contact-information {
+            grid-area: info;
+        }
+        .container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-template-areas:
+                "contact-head form"
+                "info form";
+            gap: 1rem;
+        }
+    }
+
+    @media (min-width: 1024px) {
+        .container {
+            gap: 6rem;
+        }
+        .form {
+            max-width: 440px;
+        }
+    }
+</style>

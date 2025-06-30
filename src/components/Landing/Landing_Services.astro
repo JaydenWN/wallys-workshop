@@ -1,0 +1,121 @@
+---
+import LandingServicesCard from "./Landing_Services_Card.astro";
+import placeholder from "../../../public/placeholder.svg";
+import logbookImage from "@images/logbook-mobile-mechanic.png";
+import generalImage from "@images/general-services.jpg";
+import repairsImage from "@images/repairs.webp";
+import breakdownImage from "@images/break-downs.jpg";
+import canbImage from "@images/bike-service.jpg";
+import farmImage from "@images/farm-equipment.jpg";
+import trailerImage from "@images/trailer.jpg";
+---
+
+<section>
+    <div class="container">
+        <div class="section-header">
+            <h2>Our Mobile Mechanic Services</h2>
+            <p>
+                We offer a full range of mobile mechanical services across Glen
+                Innes, Deepwater, Tenterfield, Inverell and beyond. Whether it’s
+                regular maintenance, emergency repairs or farm gear that needs
+                attention, Wally’s Workshop brings the tools and experience
+                right to you. No job too big or small, we keep you moving
+            </p>
+        </div>
+
+        <div class="service-list">
+            <LandingServicesCard
+                title="Logbook Services"
+                text="Need to keep your new car warranty intact without the hassle of going to the dealership? We provide fully qualified logbook servicing that meets all manufacturer specifications. We come to you with all the right tools, stamp your logbook and give your vehicle the professional care it needs at the right intervals."
+                image={logbookImage}
+                ctaText="Contact Us"
+            />
+
+            <LandingServicesCard
+                title="General Services"
+                text="Regular servicing is the key to preventing major issues down the track. We offer full vehicle checks, fluid top-ups, oil and filter changes, brake inspections and more. Whether your vehicle is older or brand new, general servicing helps it stay reliable, efficient and safe on the road."
+                image={generalImage}
+                ctaText="Contact Us"
+            />
+
+            <LandingServicesCard
+                title="Repairs"
+                text="Something not sounding right? Leaking oil? Struggling to start? We provide honest mechanical repairs for a wide range of issues including brakes, cooling systems, belts, hoses, fuel systems and more. We’ll diagnose the issue properly, explain your options clearly and get it sorted without fuss."
+                image={repairsImage}
+                ctaText="Contact Us"
+            />
+
+            <LandingServicesCard
+                title="Breakdowns"
+                text="Car won’t start? Stuck in the driveway or stranded on the roadside? We offer fast response breakdown assistance throughout Glen Innes and surrounding towns. Whether it’s a flat battery, overheating engine or something more serious, we’ll get to you quickly and do our best to get you going again without towing."
+                image={breakdownImage}
+                ctaText="Contact Us"
+            />
+
+            <LandingServicesCard
+                title="Cars and Bikes"
+                text="We service and repair all makes and models of cars and motorbikes. Whether you ride a dirt bike, cruise on a road bike or commute in a family sedan, we offer mobile servicing, tuning, inspections and repairs with experience you can trust."
+                image={canbImage}
+                ctaText="Contact Us"
+            />
+
+            <LandingServicesCard
+                title="Farm Equipment"
+                text="Farm gear needs to be working when you need it. We service and repair mowers, tractors, quad bikes, generators and more. We know how important it is to minimise downtime, so we offer on-site repairs to keep your machinery running strong out in the paddock."
+                image={farmImage}
+                ctaText="Contact Us"
+            />
+
+            <LandingServicesCard
+                title="Trailers"
+                text="A well-maintained trailer is key for safe towing. We provide inspections, wheel bearing services, brake checks, light repairs and more. Whether you tow tools, livestock or heavy gear, we’ll make sure your trailer is ready for the road."
+                image={trailerImage}
+                ctaText="Contact Us"
+            />
+        </div>
+    </div>
+</section>
+
+<style>
+    h2 {
+        font-size: 1.65em;
+    }
+    .container {
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+    }
+    .section-header {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+    }
+    .service-list {
+        display: flex;
+        flex-direction: column;
+        gap: 4rem;
+    }
+    @media (min-width: 768px) {
+        .section-header {
+            text-align: center;
+            width: 75%;
+            margin: 0px auto;
+            gap: 4rem;
+        }
+        .service-list {
+            gap: 1rem;
+            flex-direction: row;
+            flex-wrap: wrap;
+        }
+        .container {
+            gap: 6rem;
+        }
+    }
+
+    @media (min-width: 1024px) {
+        .service-list {
+            flex-direction: column;
+            gap: 2rem;
+        }
+    }
+</style>
