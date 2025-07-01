@@ -1,0 +1,101 @@
+---
+import { Image } from "astro:assets";
+import facebookIcon from "@icons/facebook-white.svg";
+---
+
+<section>
+    <div class="container">
+        <h2>Follow Us on Social media</h2>
+        <p>
+            Want to stay in the loop with what we’re working on? Follow Wally’s
+            Workshop on social media for job updates, handy tips and a
+            behind-the-scenes look at life as a mobile mechanic. You might even
+            catch your own vehicle featured!
+        </p>
+        <div class="social-card">
+            <Image src={facebookIcon} alt="follow wally on facebook" />
+            <div class="info">
+                <p>Follow Our Facebook</p>
+                <a href="">Wally’s Workshop - Mobile Mechanic </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<style>
+    section {
+        background-color: var(--bg-purple);
+    }
+    .image {
+        width: 100%;
+        height: auto;
+        border-radius: 16px;
+    }
+    h2 {
+        color: var(--text-purple);
+        font-size: 2em;
+    }
+    .container {
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+    }
+
+    .social-card {
+        color: white;
+        display: flex;
+        gap: 1rem;
+        padding: 1rem;
+        background-color: var(--purple);
+        border-radius: 16px;
+    }
+    .icon {
+        width: 38px;
+        height: auto;
+    }
+    .contact-info,
+    .info {
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+    .info p {
+        font-weight: bold;
+    }
+    a {
+        text-decoration: none;
+        color: white;
+    }
+    @media (min-width: 768px) {
+        .container {
+            gap: 4rem;
+        }
+        .social-card {
+            width: fit-content;
+            padding: 2rem;
+        }
+    }
+
+    @media (min-width: 1440px) {
+        .container {
+            display: grid;
+            gap: 6rem;
+            grid-template-columns: 0.7fr 1.2fr;
+            grid-template-areas:
+                "title title"
+                "social-card text-content";
+        }
+
+        .social-card {
+            grid-area: social-card;
+            padding: 2rem;
+            height: fit-content;
+        }
+        h2 {
+            grid-area: title;
+        }
+        p {
+            grid-area: text-content;
+        }
+    }
+</style>

@@ -1,0 +1,22 @@
+---
+import SubpageHero from "../components/common/Subpage_Hero.astro";
+import ContactDirect from "../components/Contact/Contact_Direct.astro";
+import ContactHours from "../components/Contact/Contact_Hours.astro";
+import ContactRequest from "../components/Contact/Contact_Request.astro";
+import ContactSocial from "../components/Contact/Contact_Social.astro";
+import Layout from "../layouts/Base_Layout.astro";
+---
+
+<Layout
+    title="Contact Wally’s Workshop | Mobile Mechanic Glen Innes and Surrounds"
+    description="Need a mobile mechanic in Glen Innes, Deepwater, Tenterfield or Inverell? Get in touch with Wally’s Workshop today. We’ll come to you for repairs, servicing or breakdown help."
+>
+    <SubpageHero
+        title="Contact Wally’s Workshop Mobile Mechanic Servicing Glen Innes and Surrounds"
+        text="Need a hand with your car, bike or farm gear? Whether you’re after a quote, have a question or want to book in a service, getting in touch is easy. We’re a local mobile mechanic servicing Glen Innes, Deepwater, Tenterfield, Inverell and nearby areas"
+    />
+    <ContactRequest />
+    <ContactHours />
+    <ContactDirect />
+    <ContactSocial />
+</Layout>

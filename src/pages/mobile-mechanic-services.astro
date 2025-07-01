@@ -1,0 +1,30 @@
+---
+import SubpageHero from "../components/common/Subpage_Hero.astro";
+import Layout from "../layouts/Base_Layout.astro";
+import ServicesLogbook from "../components/Services/Services_Logbook.astro";
+import ServicesGeneral from "../components/Services/Services_General.astro";
+import ServicesRepairs from "../components/Services/Services_Repairs.astro";
+import ServicesBreakdown from "../components/Services/Services_Breakdown.astro";
+import ServicesBikes from "../components/Services/Services_Bikes.astro";
+import ServicesFarm from "../components/Services/Services_Farm.astro";
+import ServicesTrailer from "../components/Services/Services_Trailer.astro";
+import ServicesFAQ from "../components/Services/Services_FAQ.astro";
+---
+
+<Layout
+    title="Mobile Mechanic Services Glen Innes, Deepwater, Inverell | Wally’s Workshop"
+    description="From logbook servicing and general repairs to farm equipment and trailer maintenance, Wally’s Workshop brings reliable mechanical services to you across Glen Innes and nearby towns."
+>
+    <SubpageHero
+        title="Your Local Mobile Mechanic for Glen Innes and Surrounds"
+        text="At Wally’s Workshop, we bring professional mechanical servicing and repairs straight to your doorstep. From logbook servicing and general maintenance to breakdowns and farm equipment repairs, we keep cars, bikes, trailers and machinery running right across Glen Innes, Inverell, Tenterfield, Deepwater and surrounding areas. Reliable, qualified and always ready to help. Wally’s Workshop is the mechanic that comes to you."
+    />
+    <ServicesLogbook />
+    <ServicesGeneral />
+    <ServicesRepairs />
+    <ServicesBreakdown />
+    <ServicesBikes />
+    <ServicesFarm />
+    <ServicesTrailer />
+    <ServicesFAQ />
+</Layout>

@@ -1,0 +1,157 @@
+---
+import { Image } from "astro:assets";
+import pinIcon from "@icons/location-white.svg";
+import PrimaryButton from "../common/Primary_Button.astro";
+import SecondaryButton from "../common/Secondary_Button_Dark.astro";
+import callIcon from "@icons/call-purple.svg";
+import messageIcon from "@icons/calandar-icon.svg";
+---
+
+<section>
+    <div class="container">
+        <h2>Locations We Service</h2>
+        <p>
+            Wally’s Workshop is a fully mobile mechanic service covering Glen
+            Innes and a wide range of surrounding towns and rural properties.
+            Whether you need help at home, on the roadside or out on the farm,
+            Wally comes to you with reliable, professional service every time.
+        </p>
+
+        <ul class="locations">
+            <li class="location">
+                <Image src={pinIcon} alt="location pin" />Glen Innes
+            </li>
+            <li class="location">
+                <Image src={pinIcon} alt="location pin" />Deepwater
+            </li>
+            <li class="location">
+                <Image src={pinIcon} alt="location pin" />Tenterfield
+            </li>
+            <li class="location">
+                <Image src={pinIcon} alt="location pin" />Inverell
+            </li>
+            <li class="location">
+                <Image src={pinIcon} alt="location pin" />Emmaville
+            </li>
+            <li class="location">
+                <Image src={pinIcon} alt="location pin" />Dundee
+            </li>
+            <li class="location">
+                <Image src={pinIcon} alt="location pin" />Red Range
+            </li>
+            <li class="location">
+                <Image src={pinIcon} alt="location pin" />Glencoe
+            </li>
+            <li class="location">
+                <Image src={pinIcon} alt="location pin" />Guyra
+            </li>
+            <li class="location">
+                <Image src={pinIcon} alt="location pin" />Rural and regional
+                areas nearby
+            </li>
+        </ul>
+
+        <div class="cta">
+            <h3>Not Sure if You're in the Service Area?</h3>
+            <p>
+                If you’re unsure whether Wally services your location, just
+                reach out. Wally’s Workshop covers a wide area across Glen Innes
+                and surrounding towns, and he’s always happy to help locals
+                wherever they are. Give us a call or send a message, chances are
+                Wally can get to you.
+            </p>
+            <div class="cta-buttons">
+                <SecondaryButton
+                    link="tel:0413 470 368"
+                    text="Call Now"
+                    icon={callIcon}
+                />
+                <PrimaryButton
+                    link="/contact-wallys-workshop/#contact-form"
+                    text="Get a quote"
+                    icon={messageIcon}
+                />
+            </div>
+        </div>
+    </div>
+</section>
+
+<style>
+    section {
+        background-color: var(--bg-purple);
+    }
+    h2 {
+        font-size: 2em;
+    }
+    .container {
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+    }
+    .locations {
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+    .location {
+        background-color: var(--purple);
+        color: white;
+        padding: 1rem;
+        border-radius: 16px;
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        font-weight: bold;
+        text-transform: uppercase;
+        line-height: 135%;
+    }
+    h3 {
+        font-size: 1.35em;
+        color: var(--text-purple);
+    }
+    .cta {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+    }
+    .cta-buttons {
+        display: flex;
+        gap: 1rem;
+    }
+
+    @media (min-width: 768px) {
+        .location {
+            width: calc(50% - 1rem);
+            box-sizing: border-box;
+        }
+        .locations {
+            flex-direction: row;
+            flex-wrap: wrap;
+        }
+        .container {
+            gap: 4rem;
+        }
+        .cta {
+            padding: 2rem;
+            gap: 2rem;
+            background-color: white;
+            border-radius: 16px;
+        }
+    }
+
+    @media (min-width: 1440px) {
+        .location {
+            width: calc(33.3% - 1rem);
+        }
+        p {
+            max-width: 800px;
+        }
+        .container {
+            gap: 6rem;
+        }
+        .cta {
+            width: fit-content;
+            padding: 4rem;
+        }
+    }
+</style>

@@ -1,0 +1,24 @@
+---
+import AboutIntro from "../components/About/About_Intro.astro";
+import AboutLocations from "../components/About/About_Locations.astro";
+import AboutWhy from "../components/About/About_Why.astro";
+import AboutContact from "../components/About/About_Contact.astro";
+import SubpageHero from "../components/common/Subpage_Hero.astro";
+import LandingValues from "../components/Landing/Landing_Values.astro";
+import Layout from "../layouts/Base_Layout.astro";
+---
+
+<Layout
+	title="About Wally’s Workshop | Local Mobile Mechanic You Can Count On"
+	description="Wally’s Workshop is a local mobile mechanic built on honesty, fair pricing and friendly service. Learn more about who we are and why locals in Glen Innes and surrounds trust us with their vehicles."
+>
+	<SubpageHero
+		title="Mobile Mechanic Servicing Glen Innes and Surrounds"
+		text="Wally’s Workshop is a local mobile mechanic you can rely on across Glen Innes, Deepwater, Tenterfield, Inverell and nearby areas. With years of experience and a fully licensed service, Wally delivers honest, hassle-free mechanical work wherever you are, from the driveway to the paddock."
+	/>
+	<AboutIntro />
+	<LandingValues />
+	<AboutLocations />
+	<AboutWhy />
+	<AboutContact />
+</Layout>

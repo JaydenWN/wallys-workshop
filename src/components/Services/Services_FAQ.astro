@@ -1,0 +1,70 @@
+---
+import { Image } from "astro:assets";
+import FAQ from "../common/FAQ.astro";
+import qaImage from "@images/mobile-mechanic-qa.jpg";
+const qaObject = [
+    {
+        q: "Do you offer mobile mechanic services in Glen Innes and nearby towns?",
+        a: "Yes We provide mobile mechanic services across Glen Innes, Inverell, Tenterfield, Deepwater and surrounding areas. Whether you're at home, work or on the farm, we come to you with the right tools and know-how.",
+    },
+    {
+        q: "Can you service my vehicle without voiding the new car warranty?",
+        a: "Yes Our logbook servicing follows your vehicle manufacturer’s specifications, which means your warranty stays valid. You get dealership-level service without the dealership price or inconvenience.",
+    },
+    {
+        q: "What types of vehicles and equipment do you work on?",
+        a: "We service and repair cars, motorbikes, trailers and a wide range of farm equipment. From utes and 4WDs to quad bikes and tractors, Wally’s Workshop handles it all.",
+    },
+    {
+        q: "How do I book a service with Wally’s Workshop?",
+        a: "Booking is easy. Just give us a call or send a message and we’ll arrange a time that suits you. We’ll confirm the job, come prepared and get it sorted on-site.",
+    },
+];
+---
+
+<section>
+    <div class="container">
+        <h2>Frequently Asked Questions</h2>
+        <FAQ qaObject={qaObject} class="faq" />
+        <Image src={qaImage} alt="" class="image" />
+    </div>
+</section>
+
+<style>
+    h2 {
+        font-size: 1.65em;
+        color: var(--text-purple);
+    }
+    .container {
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+    }
+    .image {
+        width: 100%;
+        height: auto;
+        border-radius: 16px;
+    }
+
+    @media (min-width: 768px) {
+        .container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-template-areas:
+                "title title"
+                "image faq";
+            gap: 2rem;
+        }
+        .image {
+            grid-area: image;
+        }
+        .faq {
+            grid-area: faq;
+        }
+        h2 {
+            grid-area: title;
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+    }
+</style>

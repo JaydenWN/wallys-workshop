@@ -1,0 +1,107 @@
+---
+import { Image } from "astro:assets";
+import emailIcon from "@icons/email-white.svg";
+import phoneIcon from "@icons/phone.svg";
+---
+
+<section>
+    <div class="container">
+        <h2>Contact Wally Directly</h2>
+        <p>
+            Prefer to speak with someone straight away? No problem. Whether
+            you're chasing a quick quote, need help with a breakdown or just
+            want to ask a question, you can reach Wally directly by phone or
+            email. We’re always happy to help!
+        </p>
+
+        <div class="contact-info">
+            <div class="info-card">
+                <Image src={phoneIcon} alt="call wally" class="icon" />
+                <div class="info">
+                    <p>Contact Us By Phone</p>
+                    <a href="tel:0426 977 997">0426 977 997</a>
+                </div>
+            </div>
+
+            <div class="info-card">
+                <Image src={emailIcon} alt="email wally" class="icon" />
+                <div class="info">
+                    <p>Send Us an Email</p>
+                    <a href="mailto:Wally@wallysworkshop.com"
+                        >Wally@wallysworkshop.com</a
+                    >
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<style>
+    h2 {
+        color: var(--text-purple);
+        font-size: 2em;
+    }
+    .container {
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+    }
+    .info-card {
+        color: white;
+        display: flex;
+        gap: 1rem;
+        padding: 1rem;
+        background-color: var(--purple);
+        border-radius: 16px;
+    }
+    .icon {
+        width: 38px;
+        height: auto;
+    }
+    .contact-info,
+    .info {
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+    .info p {
+        font-weight: bold;
+    }
+    a {
+        text-decoration: none;
+        color: white;
+    }
+    @media (min-width: 768px) {
+        .container {
+            gap: 4rem;
+        }
+        .contact-info {
+            flex-direction: row;
+        }
+        .info-card {
+            width: calc(50% - 1rem);
+        }
+    }
+    @media (min-width: 1440px) {
+        .container {
+            display: grid;
+            grid-template-columns: 0.7fr 1.2fr;
+            grid-template-areas:
+                "title title"
+                "text-content contact-info";
+        }
+        .info-card {
+            padding: 2rem;
+            height: fit-content;
+        }
+        .contact-info {
+            grid-area: contact-info;
+        }
+        h2 {
+            grid-area: title;
+        }
+        p {
+            grid-area: text-content;
+        }
+    }
+</style>

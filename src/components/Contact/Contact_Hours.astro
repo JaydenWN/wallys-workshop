@@ -1,0 +1,67 @@
+---
+import { Image } from "astro:assets";
+import wallyImage from "@images/wally-working.jpg";
+---
+
+<section>
+    <div class="container">
+        <h2>Wally’s Working Hours</h2>
+        <p>
+            Wally’s Workshop gets started from 7am and works through until late.
+            We stay flexible to fit you in and often keep going until the job is
+            sorted. Emergency callouts are available for breakdowns or urgent
+            repairs. If you're stuck and need help fast, give us a call and
+            we’ll do our best to get to you quickly
+        </p>
+        <Image
+            src={wallyImage}
+            alt="Wallys Mobile Mechanic in action"
+            class="image"
+        />
+    </div>
+</section>
+
+<style>
+    section {
+        background-color: var(--bg-purple);
+    }
+    .image {
+        width: 100%;
+        height: auto;
+        border-radius: 16px;
+    }
+    h2 {
+        color: var(--text-purple);
+        font-size: 2em;
+    }
+    .container {
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+    }
+
+    @media (min-width: 768px) {
+        .container {
+            gap: 4rem;
+        }
+    }
+
+    @media (min-width: 1024px) {
+        .container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-template-areas:
+                "title title"
+                "image text-content";
+        }
+        h2 {
+            grid-area: title;
+        }
+        .image {
+            grid-area: image;
+        }
+        p {
+            grid-area: text-content;
+        }
+    }
+</style>

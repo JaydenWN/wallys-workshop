@@ -51,7 +51,7 @@ import { Image } from "astro:assets";
         width: fit-content;
         padding: 0.5rem 1rem;
         background-color: var(--red);
-        border-radius: 16px;
+        border-radius: 2rem;
         border: 0px;
         color: white;
         font-family: "paragraph";
@@ -61,5 +61,12 @@ import { Image } from "astro:assets";
         justify-content: center;
         gap: 1rem;
         font-size: 1rem;
+        transition: all 0.25s ease;
+    }
+
+    button:hover {
+        cursor: pointer;
+        background-color: #9f2323;
+        border-radius: 1rem;
     }
 </style>

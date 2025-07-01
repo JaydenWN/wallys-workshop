@@ -1,0 +1,53 @@
+---
+import PrimaryButton from "../common/Primary_Button.astro";
+import SecondaryButton from "../common/Secondary_Button.astro";
+import callIcon from "@icons/phone.svg";
+import messageIcon from "@icons/calandar-icon.svg";
+const { title, text } = Astro.props;
+---
+
+<div class="cta-box">
+    <h3>{title}</h3>
+    <p>{text}</p>
+    <div class="cta-buttons">
+        <SecondaryButton
+            link="tel:0426 977 997"
+            text="Call Now"
+            icon={callIcon}
+        />
+        <PrimaryButton
+            link="/contact-wallys-workshop/#contact-form"
+            text="Get a quote"
+            icon={messageIcon}
+        />
+    </div>
+</div>
+
+<style>
+    .cta-box {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        padding: 1.5rem;
+        background-color: var(--purple);
+        color: white;
+        border-radius: 16px;
+        text-align: center;
+        box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+    }
+    .cta-box h3 {
+        color: white;
+        font-size: 1.5em;
+    }
+    .cta-buttons {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        margin-top: 1rem;
+    }
+    @media (min-width: 1440px) {
+        .cta-buttons {
+            flex-direction: row;
+        }
+    }
+</style>

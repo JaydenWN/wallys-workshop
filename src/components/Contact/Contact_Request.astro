@@ -1,0 +1,59 @@
+---
+import ContactForm from "../common/Contact_Form.astro";
+---
+
+<section>
+    <div class="container" id="contact-form">
+        <h2>Request a Service</h2>
+        <p>
+            Need a hand with your vehicle or equipment? Use the form below to
+            request a service and we’ll be in touch to confirm the details.
+            Whether it's a logbook service, repairs, or breakdown support. We
+            come to you across Glen Innes, Deepwater, Tenterfield, Inverell and
+            surrounding areas.
+        </p>
+        <div class="contact">
+            <ContactForm />
+        </div>
+    </div>
+</section>
+
+<style>
+    .container {
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+    }
+    h2 {
+        font-size: 2em;
+        color: var(--text-purple);
+    }
+    #contact-form :global(input, textarea) {
+        background-color: var(--bg-purple);
+    }
+
+    @media (min-width: 768px) {
+        .container {
+            gap: 4rem;
+        }
+    }
+
+    @media (min-width: 1024px) {
+        .container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-template-areas:
+                "title title"
+                "text-content contact-form";
+        }
+        h2 {
+            grid-area: title;
+        }
+        p {
+            grid-area: text-content;
+        }
+        .contact {
+            grid-area: contact-form;
+        }
+    }
+</style>
