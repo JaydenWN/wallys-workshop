@@ -5,7 +5,7 @@ import sitemap from "@astrojs/sitemap";
 
 // https://astro.build/config
 export default defineConfig({
-	site: "https://wallys-workshop.vercel.app/",
+	site: "https://wallysmobileworkshop.com",
 	integrations: [mdx(), sitemap()],
 	vite: {
 		resolve: {
